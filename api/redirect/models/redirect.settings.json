@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "redirects",
+  "info": {
+    "name": "redirect",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "redirectPath": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "displayName": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "url": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "icon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
